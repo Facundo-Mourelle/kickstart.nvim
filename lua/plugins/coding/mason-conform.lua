@@ -1,0 +1,3 @@
+return {
+  'LittleEndianRoot/mason-conform',
+}
