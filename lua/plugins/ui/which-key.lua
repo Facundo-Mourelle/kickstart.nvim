@@ -1,6 +1,6 @@
 return { -- Useful plugin to show you pending keybinds.
   'folke/which-key.nvim',
-  event = 'VimEnter', -- Sets the loading event to 'VimEnter'
+  lazy = 'VeryLazy', -- Load immediately instead of on VimEnter
   opts = {
     -- delay between pressing a key and opening which-key (milliseconds)
     -- this setting is independent of vim.o.timeoutlen
@@ -44,9 +44,18 @@ return { -- Useful plugin to show you pending keybinds.
 
     -- Document existing key chains
     spec = {
+      { '<leader>o', group = '[O]pencode', mode = { 'n', 'x', 't' } },
       { '<leader>s', group = '[S]earch' },
       { '<leader>t', group = '[T]oggle' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      { 's', group = '[S]urround', mode = { 'n', 'v' } },
+      { 'sa', desc = 'Add Surrounding', mode = { 'n', 'v' } },
+      { 'sd', desc = 'Delete Surrounding' },
+      { 'sf', desc = 'Find Right Surrounding' },
+      { 'sF', desc = 'Find Left Surrounding' },
+      { 'sh', desc = 'Highlight Surrounding' },
+      { 'sr', desc = 'Replace Surrounding' },
+      { 'sn', desc = 'Update `MiniSurround.config.n_lines`' },
     },
   },
 }
